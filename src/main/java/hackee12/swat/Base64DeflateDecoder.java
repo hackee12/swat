@@ -1,7 +1,6 @@
 package hackee12.swat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
@@ -17,7 +16,7 @@ public class Base64DeflateDecoder implements Decoder
 	}
 
 	@Override
-	public String decode(String rawMessage) throws DataFormatException, IOException
+	public String decode(String rawMessage) throws DataFormatException
 	{
 		final byte[] bytesIn = parseBase64Binary(rawMessage);
 
