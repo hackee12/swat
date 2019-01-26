@@ -1,8 +1,8 @@
 package hackee12.swat;
 
-import java.util.zip.DataFormatException;
+import hackee12.swat.decoder.exception.DecoderException;
 
 public interface Decoder
 {
-	String decode(String rawMessage) throws DataFormatException;
+	String decode(String rawMessage) throws DecoderException;
 }
