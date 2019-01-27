@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.xml.bind.DatatypeConverter;
 import java.text.MessageFormat;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.zip.Deflater;
 
 public class Base64DeflateDecoderTest {
@@ -28,7 +28,7 @@ public class Base64DeflateDecoderTest {
         final int compressedLength = compressor.deflate(bytesOut);
         final byte[] bytesCompressed = Arrays.copyOf(bytesOut, compressedLength);
 
-        this.rawMessage = DatatypeConverter.printBase64Binary(bytesCompressed);
+        this.rawMessage = Base64.getEncoder().encodeToString(bytesCompressed);
     }
 
     @Test

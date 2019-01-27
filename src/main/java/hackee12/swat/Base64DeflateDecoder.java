@@ -4,10 +4,9 @@ import hackee12.swat.decoder.exception.DecoderException;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Base64;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
-
-import static javax.xml.bind.DatatypeConverter.parseBase64Binary;
 
 public class Base64DeflateDecoder implements Decoder {
 
@@ -26,7 +25,7 @@ public class Base64DeflateDecoder implements Decoder {
     @Override
     public String decode(String rawMessage) {
 
-        final byte[] bytesIn = parseBase64Binary(rawMessage);
+        final byte[] bytesIn = Base64.getDecoder().decode(rawMessage);
 
         final Inflater decoder = new Inflater();
         decoder.setInput(bytesIn);

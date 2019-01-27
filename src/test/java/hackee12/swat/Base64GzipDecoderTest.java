@@ -11,14 +11,14 @@ import java.util.zip.GZIPOutputStream;
 public class Base64GzipDecoderTest {
 
     @Test
-    public void decode() {
+    public void decodeSystemEncodedMessage() {
         final String rawMessage = "H4sICGw8TVwAA3Rlc3QudHh0ACvOz01VSM5JTSxSKEmtKOECAAAepLkQAAAA";
         final Base64GzipDecoder decoder = new Base64GzipDecoder();
         Assert.assertEquals("Decoder failure", "some clear text", decoder.decode(rawMessage));
     }
 
     @Test
-    public void test() throws IOException {
+    public void decodeJavaEncodedMessage() throws IOException {
 
         final String testMessage = "some clear text";
 
